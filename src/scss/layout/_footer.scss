@@ -1,0 +1,27 @@
+.footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	min-height: 20px;
+	@include font($bold);
+	@include fontSize(15);
+
+	@media #{$sm} { text-align: center; @include pb(10); @include pt(10); }
+	@media #{$md} { text-align: center; @include pb(12); @include pt(12); }
+
+	@media #{$lg} { text-align: right; @include pb(30); @include pt(0); }
+
+	span{
+		a{
+			@include colors(orange);
+			@include transition;
+			text-decoration: none;
+			opacity: 1;
+
+			&:hover{
+				opacity: .8;
+			}
+		}
+	}
+}

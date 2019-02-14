@@ -1,0 +1,36 @@
+.home{
+	
+	h2{
+		@extend %default-title;
+		@include font($light);
+		  
+
+		& > span{
+			@extend %block;
+			@extend %default-title-span;
+			@include font($bold);
+		}
+
+		@media #{$sm} { @include fontSize(20); & > span{ @include fontSize(25); } } 
+
+		@media #{$md} { @include fontSize(25); }
+	}
+	p{
+		@extend %default-para;
+	}
+	a.osorio-btn{
+		@extend %default-btn;
+
+		@media #{$sm} { @include mb(20); } 
+
+		@media #{$md} { @include mb(25); } 
+
+		@media #{$lg} { @include mb(0); } 
+	}
+
+	.home-bg
+	{
+		background-image: url('../img/home.svg');
+		@extend %default-bg-props;
+	 }
+}

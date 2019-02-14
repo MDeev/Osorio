@@ -1,0 +1,122 @@
+.section{
+	opacity: 0;
+	@include transition(1s);
+	h2, p, a, ul > li, input, textarea, form > div > span, .col-6 .service, .col-6 .team, .get-started, .read-more, .home-bg, .about-bg, .achivement-bg, .contact-bg{ opacity: 0; @include transition(1s);  }
+	&.active {
+		opacity: 1;
+		h2, p, a, ul > li, input, textarea, form > div > span, .col-6 .service, .col-6 .team, .get-started, .read-more, .home-bg, .about-bg, .achivement-bg, .contact-bg{ opacity: 1;  }
+	}
+
+	&:first-of-type{ 
+		h2{ @extend %animate-bottom; transition-delay: .9s; }
+		p{ @extend %animate-left; transition-delay: 1.2s; }
+		a{ @extend %animate-top; transition-delay: 1.5s; }
+		.home-bg{ @extend %animate-right; transition-delay: 1.2s; }
+
+		&.active {
+			h2{ @extend %animate-bottom-0; }
+			p{  @extend %animate-left-0; }
+			a{  @extend %animate-top-0; }
+			.home-bg{ @extend %animate-right-0; }
+		}
+	}
+
+	&:nth-of-type(2){
+		h2{ @extend %animate-right; transition-delay: .9s; }
+		p{ @extend %animate-right; transition-delay: 1.2s; }
+		a{ @extend %zoom-out; transition-delay: 1.5s; }
+		.about-bg{ @extend %zoom-in; transition-delay: 1.2s; }
+
+		&.active {
+			h2{ @extend %animate-right-0; }
+			p{  @extend %animate-right-0; }
+			a{  @extend %zoom-out-0; }
+			.about-bg{ @extend %zoom-in-0; }
+		}
+	}
+
+	&:nth-of-type(3){
+		h2{ @extend %animate-top; transition-delay: .8s; }
+		ul > li{
+			@extend %zoom-in;
+			&:first-of-type{ transition-delay: 2s; }
+			&:nth-of-type(2){ transition-delay: 2.5s; }
+			&:last-of-type{ transition-delay: 3s; }
+		}
+		.achivement-bg{ @extend %zoom-in; transition-delay: 1.5s; }
+
+		&.active {
+			h2{ @extend %animate-top-0; }
+			ul > li{
+				@extend %zoom-in-0;
+			}
+			.achivement-bg{ @extend %zoom-in-0; }
+		}
+	}
+
+	&:nth-of-type(4){
+		h2{ @extend %animate-top; transition-delay: .8s; }
+		.get-started{ @extend %animate-right; transition-delay: 1.2s; }
+		.read-more{ @extend %animate-left; transition-delay: 1.2s; }
+		.col-6{
+			&:first-of-type .service{ @extend %animate-right; transition-delay: 1.5s; }
+			&:nth-of-type(2) .service{ @extend %animate-top; transition-delay: 2s; }
+			&:nth-of-type(3) .service{ @extend %animate-bottom; transition-delay: 2.5s; }
+			&:last-of-type .service{ @extend %animate-left; transition-delay: 3s; }
+		}
+
+		&.active {
+			h2{ @extend %animate-top-0; }
+			.get-started{ @extend %animate-right-0; transition-delay: 1.2s; }
+			.read-more{  @extend %animate-left-0; transition-delay: 1.2s; }
+			.col-6{
+				&:first-of-type .service{ @extend %animate-right-0; }
+				&:nth-of-type(2) .service{ @extend %animate-top-0; }
+				&:nth-of-type(3) .service{ @extend %animate-bottom-0; }
+				&:last-of-type .service{ @extend %animate-left-0; }
+			}
+		}
+	}
+
+	&:nth-of-type(5){
+		h2{ @extend %zoom-in; transition-delay: .8s; }
+		.col-6{
+			&:first-of-type .team, &:nth-of-type(3) .team{ @extend %animate-bottom; transition-delay: 1.5s; }
+			&:nth-of-type(2) .team, &:last-of-type .team{ @extend %animate-top; transition-delay: 1.5s; }
+		}
+
+		&.active {
+			h2{ @extend %zoom-in-0; }
+			.col-6{
+				&:first-of-type .team, &:nth-of-type(3) .team{ @extend %animate-bottom-0; }
+				&:nth-of-type(2) .team, &:last-of-type .team{ @extend %animate-top-0; }
+			}
+		}
+	}
+
+	&:last-of-type{
+		h2{ @extend %zoom-out; transition-delay: .8s; }
+		input[type="text"], input[type="email"], textarea{ transition-delay: 1.2s; }
+		input[type="text"]{ @extend %animate-right; }
+		input[type="email"]{ @extend %animate-left; }
+		textarea{ @extend %zoom-in; }
+		form > div > span{
+			transition-delay: 1.5s;
+			&:first-of-type{ @extend %animate-left; }
+			&:last-of-type{ @extend %animate-right; }
+		}
+		.contact-bg{ @extend %animate-bottom; transition-delay: 1.5s; }
+
+		&.active {
+			h2{ @extend %zoom-out-0; }
+			input[type="text"]{ @extend %animate-right-0; }
+			input[type="email"]{ @extend%animate-left-0; }
+			textarea{ @extend %zoom-in-0; }
+			form > div > span{
+				&:first-of-type{ @extend %animate-left-0; }
+				&:last-of-type{ @extend %animate-right-0; }
+			}
+			.contact-bg{ @extend %animate-bottom-0; }
+		}
+	}
+}

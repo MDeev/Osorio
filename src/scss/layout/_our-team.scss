@@ -1,0 +1,119 @@
+.our-team{
+	text-align: center;
+
+	@media #{$sm} { margin-top: 25px } 
+
+	@media #{$md} { margin-top: 25px } 
+
+	@media #{$lg} { margin-top: 0 } 
+
+	h2{
+		@extend %default-title;
+		@extend %default-title-span;
+		text-align: center;
+	}
+
+	.col-md-3, .col-6{
+		&:first-of-type .team .team-pic span{
+			background-image: url('../img/team-01.jpg');
+		}
+
+		&:nth-of-type(2) .team .team-pic span{
+			background-image: url('../img/team-02.jpg');
+		}
+
+		&:nth-of-type(3) .team .team-pic span{
+			background-image: url('../img/team-04.jpg');
+		}
+
+		&:last-of-type .team .team-pic span{
+			background-image: url('../img/team-03.jpg');
+		}
+	}
+	.team{
+
+		@media #{$sm} { margin-bottom: 25px } 
+
+		@media #{$md} { margin-bottom: 25px } 
+
+		@media #{$lg} { margin-bottom: 0 } 
+
+		.team-pic{
+			@extend %block;
+			@include m(0 auto);
+			@include mb(10);
+			border-radius: 50%;
+			overflow: hidden;
+			@include shadow;
+
+			@media #{$sm} { width: 100px; height: 100px; } 
+
+			@media #{$md} { width: 120px; height: 120px; } 
+
+			@media #{$lg} { width: 160px; height: 160px; } 
+
+			span{
+				@extend %block;
+				height: 100%;				
+				background-size: cover;
+				background-repeat: no-repeat;
+				@include transition(.5s);
+				transform: scale(1);
+			}
+
+			&:hover span{
+				transform: scale(1.2);
+			}
+		}
+
+		.team-info{
+			text-transform: uppercase;
+
+
+		@media #{$sm} {
+			.name{ font-size: 16px; }
+			.desc{ font-size: 8px; }
+			.contact a { font-size: 16px;  }
+		} 
+
+		@media #{$md} {
+			.name{ font-size: 16px; }
+			.desc{ font-size: 9px; }
+			.contact a { font-size: 16px;  }
+		} 
+
+		@media #{$lg} {
+			.name{ font-size: 20px; }
+			.desc{ font-size: 11px; }
+			.contact a { font-size: 20px;  }
+		} 
+
+			& > span{ @extend %block; }
+			.name{
+				@include font($bold);
+
+		background-image: $gradient;
+		background-clip: text;
+		color: transparent;
+			}
+			.desc{
+				@include mb(15);
+			}
+			.contact{
+				a{
+					@include mr(3);
+					@include ml(3);
+					@include p(5px);
+					@include colors(dark1, gray1);
+					@include transition;
+					border-radius: 50%;
+					
+					&:hover{  @include colors(white); }
+					&:first-of-type:hover{ background-color: #3b5998; }
+					&:nth-of-type(2):hover{ background-color: #1da1f2; }
+					&:last-of-type:hover{ background-color: #dd4b39; }
+				}
+			}
+		}
+	}
+}

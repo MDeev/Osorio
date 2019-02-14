@@ -1,0 +1,159 @@
+.services{
+
+	@media #{$sm} { margin-top: 25px } 
+
+	@media #{$md} { margin-top: 25px } 
+
+	@media #{$lg} { margin-top: 0 } 
+	
+	.row, .col-lg-6{ @include mb(0); }
+
+	.col-lg-6{ position: relative; }
+
+	.service-info{
+
+		@media #{$sm} {
+			text-align: center;
+		}
+
+		@media #{$md} {
+			text-align: center;
+		}
+
+		@media #{$lg} {
+			text-align: left;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		h2{
+			@extend %default-title;
+			@extend %default-title-span;
+		}
+
+		& > div{
+			@include mb(40);
+
+			@media #{$sm} { display: inline-block; } 
+
+			@media #{$md} { display: inline-block; } 
+
+			@media #{$lg} { display: block; } 
+		}
+
+		a.get-started, a.read-more{
+			@extend %default-btn;
+
+			@media #{$sm} {
+				margin-right: 5px;
+				margin-left: 5px;
+			}
+			@media #{$md} {
+				margin-right: 25px;
+				margin-left: 25px;
+			}
+			@media #{$lg} {
+				margin-right: 0;
+				margin-left: 0;
+			}
+		}
+
+		a.get-started {
+			@include transition;
+
+			@media #{$sm} {
+				padding: 5px 2px;
+				span{
+					padding: 5px 20px;
+				}
+			} 
+
+			@media #{$md} {
+				padding: 7px 2px;
+				span{
+					padding: 7px 20px;
+				}
+			} 
+
+			@media #{$lg} {
+				padding: 10px 3px;
+				span{
+					padding: 10px 75px;
+				}
+			} 
+
+			span{
+			    @include colors(orange, white);
+				@include transition;
+				border-radius: 100px;
+			}
+
+			&:hover {
+				background-image: $gradient2;
+				background-repeat: no-repeat;
+
+				span{
+				    @include colors(white);
+				    background-color: transparent;
+				}
+			}
+		}
+
+		a.read-more {
+			@media #{$lg} { padding-right: 80px; padding-left: 80px; } 
+		}
+	}
+
+	
+	.service{
+		@extend %block;
+		@include colors(null, white);
+		@include shadow(0, 0, 20px, #CCC, .50);
+		@include transition;
+		max-width: 190px;
+		max-height: 190px;
+		text-align: center;
+		cursor: pointer;
+
+
+		margin: 0 auto;
+
+		@media #{$sm} { padding: 15px; margin-bottom: 20px; } 
+
+		@media #{$md} { padding: 15px; margin-bottom: 25px; } 
+
+		@media #{$lg} { max-width: 250px; max-height: 250px; padding: 30px; margin-bottom: 40px; } 
+
+		i{
+			background-image: $gradient;
+			background-clip: text;
+			color: transparent;
+
+			@media #{$sm} { font-size: 35px; } 
+
+			@media #{$md} { font-size: 45px; } 
+
+			@media #{$lg} { font-size: 60px; } 
+		}
+
+		span{
+			@extend %block;
+			@include mt(20);
+			@include font($bold);
+			@include colors(dark2);
+			text-transform: uppercase;
+
+			@media #{$sm} { font-size: 12px; } 
+
+			@media #{$md} { font-size: 14px; } 
+
+			@media #{$lg} { font-size: 16px; } 
+		}
+
+		&:hover{ 
+			@include shadow(0, 0, 20px, #CCC, .90);
+		}
+	}
+}

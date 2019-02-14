@@ -1,0 +1,55 @@
+
+// ----------------- # Normalize # ----------------------- //
+@import '_normalize';
+// ----------------- # Variables # ----------------------- //
+@import 'variables/_variables';
+// ---------------- # Media Query # ---------------------- //
+@import 'media/_meadia-queries';
+// ------------------ # Helpers # ------------------------ //
+@import 'helpers/_helpers';
+// ------------------ # Mixins # ------------------------ //
+@import 'mixins/_mixins';
+
+
+// ------------------ # Layout # ------------------------ //
+body{
+
+	@include font;
+	@include colors(dark1, white);
+
+	@import 'layout/_default';
+	@import 'layout/_animations';
+	@import 'layout/_home';
+	@import 'layout/_about';
+	@import 'layout/_achivement';
+	@import 'layout/_services';
+	@import 'layout/_our-team';
+	@import 'layout/_contact-us';
+	@import 'layout/_header';
+	@import 'layout/_footer';
+	@import 'layout/_navigation';
+	@import 'layout/_loader';
+	@import 'layout/_animate';
+	
+	.section{
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		&:first-of-type{ background-image: url('../img/overlay_7.svg'); }
+		&:nth-of-type(2){ background-image: url('../img/overlay_2.svg'); }
+		&:nth-of-type(4){ background-image: url('../img/overlay_4.svg'); }
+		&:nth-of-type(5){ background-image: url('../img/overlay_5.svg'); }
+		&:last-of-type{ background-image: url('../img/overlay_6.svg'); }
+
+		@media #{$sm} {
+			padding-right: 15px !important;
+		}
+		@media #{$lg} {
+			&:first-of-type{ background-image: url('../img/overlay_1.svg'); }
+			&:nth-of-type(3){ background-image: url('../img/overlay_3.svg'); }
+		} 
+	}
+}
+
+
+// ------------------------------------------------------ //

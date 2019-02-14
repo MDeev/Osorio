@@ -1,0 +1,53 @@
+// top
+%animate-top {
+	transform: translateY(100px);
+}
+
+%animate-top-0 {
+	transform: translateY(0);
+}
+
+// bottom
+%animate-bottom {
+	transform: translateY(-100px);
+}
+
+%animate-bottom-0 {
+	transform: translateY(0);
+}
+
+// left
+%animate-left {
+	transform: translateX(-100px);
+}
+
+%animate-left-0 {
+	transform: translateX(0);
+}
+
+// right
+%animate-right {
+	transform: translateX(100px);
+}
+
+%animate-right-0 {
+	transform: translateX(0);
+}
+
+// Zoom in
+%zoom-in {
+	transform: scale(.8);
+}
+
+%zoom-in-0 {
+	transform: scale(1);
+}
+
+// Zoom out
+%zoom-out {
+	transform: scale(1.2);
+}
+
+%zoom-out-0 {
+	transform: scale(1);
+}

@@ -1,0 +1,80 @@
+.col-lg-6{
+
+	@media #{$sm} { text-align: center; } 
+
+	@media #{$md} { text-align: center; } 
+
+	@media #{$lg} { text-align: unset; } 
+}
+
+%default-title{
+	@include font($bold);
+	@include colors(dark2);
+	text-transform: uppercase;
+
+	@media #{$sm} { @include fontSize(25); @include mb(20); @include mt(15); text-align: center; } 
+
+	@media #{$md} { @include fontSize(35); @include mb(20); @include mt(15); text-align: center; } 
+
+	@media #{$lg} { @include fontSize(45); @include mb(30); @include mt(0); text-align: left; } 
+}
+
+%default-title-span{
+	& > span{
+		background-image: $gradient;
+		background-clip: text;
+		color: transparent;
+
+		@media #{$sm} { @include fontSize(35); } 
+
+		@media #{$md} { @include fontSize(45); } 
+
+		@media #{$lg} { @include fontSize(70); } 
+	}
+}
+
+%default-para{
+	@include mb(40);
+	@include font($bold);
+	@include colors(dark1);
+	@include fontSize(18);
+	opacity: .7;
+
+	@media #{$sm} { @include fontSize(15); @include mb(15); text-align: center; } 
+
+	@media #{$md} { @include fontSize(16); @include mb(25); text-align: center; } 
+
+	@media #{$lg} { @include fontSize(18); @include mb(40); text-align: left; } 
+}
+
+%default-btn{
+	@extend %inline;
+	@include colors(white);
+	text-decoration: none;
+	border-radius: 100px;
+	background-image: $gradient;
+	background-repeat: no-repeat;
+	background-size: 150%;
+	background-position-x: 98%;
+	@include transition(.5s);
+	&:hover{
+		background-position-x: 50%;
+	}
+
+	@media #{$sm} { @include fontSize(16); @include p(5px 20px); } 
+
+	@media #{$md} { @include fontSize(20); @include p(7px 25px); } 
+
+	@media #{$lg} { @include fontSize(22); @include p(10px 35px); } 
+}
+
+
+%default-bg-props{
+	position: relative;
+	background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 200px;
+    height: 100%;
+    background-position: center;
+    display: block;
+}

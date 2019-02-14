@@ -1,0 +1,62 @@
+.achivement{
+
+	h2{
+		@extend %default-title;
+		@extend %default-title-span;
+	}
+
+	ul{
+		width: 100%;
+
+		@media #{$sm} { @include mb(30); } 
+
+		@media #{$md} { @include mb(30); } 
+
+		@media #{$lg} { @include mb(0); } 
+
+		li{
+			@extend %inline;
+			@include font($light);
+			@include colors(orange);
+			@include p(5px 10px);
+			@include mr(3);
+			@include ml(3);
+			@include mb(0);
+			width: calc(33.33333% - (6px * 3));
+			text-align: left;
+
+			@media #{$sm} { @include fontSize(35); } 
+
+			@media #{$md} { @include fontSize(50); }
+
+			@media #{$xlg} { @include fontSize(60); } 
+
+			span{
+				@extend %block;
+				position: relative;
+				&:before{
+					content: '';
+					position: absolute;
+					left: -7px;
+					top: 50%;
+					height: 25%;
+					transform: translateY(-55%);
+					border-style: solid;
+					border-color: transparent transparent transparent map-get($color, orange);
+				}
+
+				@media #{$sm} { @include fontSize(16); @include pl(3); &:before{ border-width: 5px; } } 
+
+				@media #{$md} { @include fontSize(18); @include pl(4); &:before{ border-width: 5px; } } 
+
+				@media #{$lg} { @include fontSize(22); @include pl(5); &:before{ border-width: 7px; } } 
+			}
+		}
+	}
+
+	.achivement-bg
+	{
+		background-image: url('../img/achivement.svg');
+		@extend %default-bg-props;
+	}
+}

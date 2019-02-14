@@ -1,0 +1,103 @@
+div#fp-nav{
+	margin: 0 !important;
+	height: 70%;
+	
+    transform: translateY(-50%);
+    width: 2px;
+
+
+	@media #{$sm} { right: 13px !important; top: 52%; } 
+
+	@media #{$md} { right: 25px !important; }
+
+	ul{
+		height: 100%;
+		@include colors(null, orange);
+		width: 2px;
+
+		li{
+			margin: 0 auto !important;
+			padding: 0 !important;
+		    width: 10px;
+		    position: relative;
+		    height: calc(100% / 5);
+    		transform: translateX(-40%);
+
+    		&:last-of-type{
+    			background: transparent;
+    		}
+
+			a{
+				span{
+					top: 0 !important;
+					@include colors(null, orange);
+					@include transition(.2s);
+					transform: scale(1);
+
+					&:last-of-type{
+					    transform: translate(-50%, -50%);
+					    margin: 0 !important;
+
+						@media #{$sm} { height: 7px; width: 7px; } 
+
+						@media #{$md} { height: 7px; width: 7px; } 
+
+						@media #{$lg} { height: 10px; width: 10px; }
+
+					    &:before{ 
+					    	position: absolute;
+					    	top: 50%;
+					    	left: 50%;
+					    	transform: translate(-50%, -50%);
+					    	@include colors(white);
+					    	@include font($bold);
+					    	overflow: hidden;
+					    	@include transition(.2s);
+					    	opacity: 0;
+					    }
+					}
+				}
+
+				&.active{
+					margin: 0 !important;
+
+					span{
+						background-image: $gradient;
+						background-repeat: no-repeat;
+						margin: 0 !important;
+
+						&:last-of-type{
+						   
+						    overflow: hidden;
+
+							@media #{$sm} { height: 20px; width: 20px; &:before{ font-size: 11px } } 
+
+							@media #{$md} { height: 30px; width: 30px; &:before{ font-size: 17px } } 
+
+							@media #{$lg} { height: 40px; width: 40px; &:before{ font-size: 20px } } 
+
+						    &:before{
+						    	opacity: 1;
+						    }
+						}
+					}
+
+					& + .fp-tooltip{ display: none; }
+				}				
+			}
+			.fp-tooltip{
+				right: 13px !important;
+				top: -11px;
+				@include colors(orange);
+			}
+
+			a span:last-of-type:before { font-family: FontAwesome; }
+			&:first-of-type a span:last-of-type:before { content: '\f015'; }
+			&:nth-of-type(2) a span:last-of-type:before { content: '\f129'; }
+			&:nth-of-type(3) a span:last-of-type:before { content: '\f201'; }
+			&:nth-of-type(4) a span:last-of-type:before { content: '\f135'; }
+			&:nth-of-type(5) a span:last-of-type:before { content: '\f0c0'; }
+			&:last-of-type a span:last-of-type:before { content: '\f27b'; }
+		}
+	}
+}

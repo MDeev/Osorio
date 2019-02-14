@@ -1,0 +1,29 @@
+.header{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	min-height: 20px;
+
+	@media #{$sm} { text-align: center; @include pt(15); @include pb(7); }
+	@media #{$md} { text-align: center; @include pt(15); @include pb(10); }
+	@media #{$lg} { text-align: left; @include pt(20); @include pb(0); }
+
+	h2{
+		a{
+			@include font($bold);
+			@include fontSize(30);
+			@include colors(dark1);
+			text-decoration: none;
+
+			span{
+				@include colors(white);
+				background-image: $gradient;
+				background-repeat: no-repeat;
+				border-radius: 10px;
+				@include p(1px 10px);
+				@include ml(3);
+			}
+		}
+	}
+}

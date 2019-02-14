@@ -1,0 +1,136 @@
+.contact-us{
+
+	.contact-form{
+		@include mr(25);
+		@include ml(25);
+		@media #{$sm} { @include mb(-10); } 
+
+		@media #{$md} { @include mb(-12); } 
+
+		@media #{$lg} { @include mb(0); } 
+
+		h2{
+			@extend %default-title;
+			@extend %default-title-span;
+			@media #{$sm} { @include mt(20); } 
+
+			@media #{$md} { @include mt(25); } 
+
+			@media #{$lg} { @include mt(0); } 
+		}
+		input, textarea{
+			border: 1px solid #F1F1F1;
+			box-shadow: none;
+			@include mb(15);
+			@include transition;
+			@include shadow(0, 0, 10px, #CCC, .3);
+			&::placeholder{ @include colors(dark1); opacity: .5; }
+
+			&:focus{
+				@include shadow(0, 0, 10px, #CCC, .7);
+			}
+			
+
+			@media #{$sm} { @include fontSize(13); @include p(5px); border-radius: 10px; } 
+
+			@media #{$md} { @include fontSize(15); @include p(7px); border-radius: 15px; } 
+
+			@media #{$lg} { @include fontSize; @include p(10px); border-radius: 20px; } 
+
+		}
+		input{
+			@media #{$sm} { width: 48%; display: inline-block; } 
+
+			@media #{$md} { width: 48%; display: inline-block; } 
+
+			@media #{$lg} { width: 100%; display: block; } 
+		}
+		textarea{
+			resize: none;
+
+			@media #{$sm} { height: 70px } 
+
+			@media #{$md} { height: 70px } 
+
+			@media #{$lg} { height: 100px } 
+		}
+
+		& > div{
+			& > span{
+				@extend %inline;
+
+				@media #{$sm} { &:first-of-type{ width: 38%; } &:last-of-type{ width: 58%; } } 
+
+				@media #{$md} { &:first-of-type{ width: 38%; } &:last-of-type{ width: 58%; } } 
+
+				@media #{$lg} { width: 48%; } 
+
+				&:first-of-type{
+					text-align: left;
+					input[type="button"]{
+						border: none;
+						outline: none;
+						cursor: pointer;
+						@extend %default-btn;
+						width: 100%;
+					}
+				}
+				&:last-of-type{
+					text-align: right;
+						@include font($bold);
+
+						@media #{$sm} { @include fontSize(14); } 
+
+						@media #{$md} { @include fontSize(15); } 
+
+						@media #{$lg} { @include fontSize(18); } 
+
+					& > a{
+						text-decoration: none;
+						@include p(5px);
+						@include transition;
+						border-radius: 50%;
+						background-image: $gradient;
+						background-repeat: no-repeat;
+						background-size: 150%;
+						background-position: -100px;
+						@include colors(null, white);
+
+
+						@media #{$sm} { @include fontSize(15); @include mr(1); @include ml(1); } 
+
+						@media #{$md} { @include fontSize(17); @include mr(2); @include ml(2); } 
+
+						@media #{$lg} { @include fontSize(20); @include mr(3); @include ml(3); } 
+
+						& > i{
+						 	background-image: $gradient;
+							background-clip: text;
+							color: transparent;
+							@include transition;
+						}
+
+						&:hover{
+							background-position: 100%;
+							& > i{ @include colors(white); }
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+
+	.contact-bg{
+		background-image: url('../img/contact.svg');
+		@extend %default-bg-props;
+		
+
+		@media #{$sm} { @include mt(10); @include mb(10); } 
+
+		@media #{$md} { @include mt(5); @include mb(10); } 
+
+		@media #{$lg} { @include mt(40); @include mb(0); } 
+	}
+}

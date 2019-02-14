@@ -1,0 +1,38 @@
+
+// Importing fonts
+$light: 'Oxygen-Light';
+$normal: 'Oxygen-Regular';
+$bold: 'Oxygen-Bold';
+
+@font-face {
+	font-family: 'Oxygen-Light';
+	src: url('../fonts/Oxygen-Light.ttf');
+}
+
+@font-face {
+	font-family: 'Oxygen-Bold';
+	src: url('../fonts/Oxygen-Bold.ttf');
+}
+
+@font-face {
+	font-family: 'Oxygen-Regular';
+	src: url('../fonts/Oxygen-Regular.ttf');
+}
+
+$color: (
+	yellow: #FFD3A5,
+	red: #FD6585,
+	orange: #E96D71,
+	black: #000,
+	dark1: #333,
+	dark2: #222,
+	white: #FFF,
+	gray1: #F1F1F1,
+	gray2: #EEE,
+	gray3: #ccc
+);
+
+
+// Gradient Color
+$gradient : linear-gradient( 135deg, map-get($color, yellow) 10%, map-get($color, red) 100%);
+$gradient2 : linear-gradient( 135deg, map-get($color, red) 10%, map-get($color, yellow) 100%);

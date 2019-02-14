@@ -1,0 +1,26 @@
+.about{
+
+	.about-bg
+	{
+		background-image: url('../img/about.svg');
+		@extend %default-bg-props;
+	}
+
+	h2{
+		@extend %default-title;
+		@extend %default-title-span;
+
+		@media #{$sm} { @include mt(20); @include mb(10); } 
+
+		@media #{$md} { @include mt(25); @include mb(10); } 
+
+		@media #{$lg} { @include mt(0); } 
+	}
+	p{
+		@extend %default-para;
+	}
+	a.osorio-btn{
+		@extend %default-btn;
+	}
+
+}
